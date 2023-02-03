@@ -24,27 +24,27 @@ object oriented programming when creating an entry object for each source file a
 information to each entry in the arraylist for easier access and better organization.
 # Implementation
 ## New ByteCode subclasses
-1. LineCode
+1. LineCode:
 * This debugger code sets the current line number to the value read from the
 bytecode file. This was somewhat straightforward to implement and test.
-2. FunctionCode
-a. The function code takes a start, end, and function name instance variables from the
+2. FunctionCode:
+* The function code takes a start, end, and function name instance variables from the
 token file and sets the function information inside the function environment record.
-3. FormalCode
-a. The formal code takes a name and an offset and initializes them with the information
+3. FormalCode:
+* The formal code takes a name and an offset and initializes them with the information
 read from the token stream. The execute method adds this information to the
 HashMap of the environment record on top of the functionEnvironmentRecord stack.
-4. debugReturnCode
-a. The new behavior required for this bytecode is to pop the FunctionEnvironmentStack
+4. debugReturnCode:
+* The new behavior required for this bytecode is to pop the FunctionEnvironmentStack
 in the debugger virtual machine.
-5. debugPopCode
-a. This bytecode reads a level integer then deletes that amount of items from the
+5. debugPopCode: 
+* This bytecode reads a level integer then deletes that amount of items from the
 symbol table.
-6. DebugLitCode
-a. This bytecode adds the literal value to the hash map on top of the environment
+6. DebugLitCode: 
+* This bytecode adds the literal value to the hash map on top of the environment
 record stack if an identifier is present in the token stream.
-7. debugCallCode
-a. This bytecode simply pushes a new function environment record on top of the stack.
+7. debugCallCode: 
+* This bytecode simply pushes a new function environment record on top of the stack.
 # FunctionEnvironmentRecord class
 To implement this class, I used the Table class algorithm from the constrainer. First, I created the
 symbol table as an instance of the Table class. Then I implemented all the necessary functions to
