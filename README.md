@@ -25,7 +25,7 @@ information to each entry in the arraylist for easier access and better organiza
 # Implementation
 ## New ByteCode subclasses
 1. LineCode
-a. This debugger code sets the current line number to the value read from the
+  a. This debugger code sets the current line number to the value read from the
 bytecode file. This was somewhat straightforward to implement and test.
 2. FunctionCode
 a. The function code takes a start, end, and function name instance variables from the
